@@ -89,10 +89,10 @@ def main():
                 case 5:
                     exibir_usuarios()
                 case 0:
-                    print(f"Saindo do sistema...")
+                    print(f"Saindo do sistema.")
                     break
                 case _:
-                    print(f"Tente novamente..")
+                    print(f"Tente novamente.")
 
 
 
