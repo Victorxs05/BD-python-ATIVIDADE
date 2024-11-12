@@ -21,26 +21,26 @@ def test_senha_valida(usuario_valido):
     assert usuario_valido.senha == "1234"
 
 def test_nome_vazio():
-    with pytest.raises(ValueError, match=" O nome está vazio."):
+    with pytest.raises(ValueError, match="O que está sendo solicitado está inválido."):
         Usuario("", "neymar@gmail.com", "1234")
 
 def test_usuario_nome_invalido():
-    with pytest.raises(TypeError, match="O nome está invalido."):
+    with pytest.raises(TypeError, match="O que está sendo solicitado está inválido."):
         Usuario(000, "neymar@gmail.com", "1234")
 
 def test_usuario_email_vazio():
-    with pytest.raises(ValueError, match="O email está vazio."):
+    with pytest.raises(ValueError, match="O que está sendo solicitado está inválido."):
         Usuario("Neymar", "", "1234")
 
 def test_usuario_email_invalido():
-    with pytest.raises(TypeError, match= "O email está invalido." ):
+    with pytest.raises(TypeError, match= "O que está sendo solicitado está inválido." ):
         Usuario("Neymar", 000, "1234")
 
 def test_usuario_senha_vazio():
-    with pytest.raises(ValueError, match="A senha está vazia."):
+    with pytest.raises(ValueError, match="O que está sendo solicitado está inválido."):
         Usuario("Neymar", "neymar@gmail.com", "")
 
 def test_usuario_senha_invalida():
-    with pytest.raises(TypeError, match="A senha está invalida."):
+    with pytest.raises(TypeError, match="O que está sendo solicitado está inválido."):
         Usuario("Neymar", "neymar@gmail.com", 000)
     

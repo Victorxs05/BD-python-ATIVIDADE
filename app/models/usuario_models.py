@@ -20,27 +20,45 @@ class Usuario(Base):
         self.senha = self._verificar_email_usuario(senha) 
 
     def _verificar_nome_usuario(self,nome):
-
         self._verificar_nome_invalido(nome)
         self._verificar_nome_vazio(nome)
-
-        self.nome = nome
-        return self.nome
+        return nome
 
     def _verificar_email_usuario(self, email):
-
         self._verificar_email_invalido(email)
         self._verificar_email_vazio(email)
 
-        self.email = email
-        return self.email
+        return email
     
     def _verificar_senha_usuario(self, senha):
-
         self._verificar_senha_invalido(senha)
         self._verificar_senha_vazio(senha)
 
-        self.senha = senha
-        return self.senha
+        return senha
+
+    def _verificar_nome_vazio(self, nome):
+        if nome == "":
+            raise ValueError("O que está sendo solicitado está vazio.")
+
+    def _verificar_nome_invalido(self, nome):
+        if not isinstance(nome, str):
+            raise TypeError("O que está sendo solicitado está inválido.")
+
+    def _verificar_email_vazio(self, email):
+        if email == "":
+            raise ValueError("O que está sendo solicitado está vazio.")
+
+    def _verificar_email_invalido(self, email):
+        if not isinstance(email, str):
+            raise TypeError("O que está sendo solicitado está inválido.")
+
+    def _verificar_senha_vazio(self, senha):
+        if senha == "":
+            raise ValueError("O que está sendo solicitado está vazio.")
+
+    def _verificar_senha_invalido(self, senha):
+        if not isinstance(senha, str):
+            raise TypeError("O que está sendo solicitado está inválido.")
+    
 #Criando Tabela no banco de dados.
 Base.metadata.create_all(bind=db)

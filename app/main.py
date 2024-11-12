@@ -23,7 +23,7 @@ def main():
         service.criar_usuario(nome=nome, email=email, senha=senha)
 
 
-    def pesquisar_usuario():
+    def consultar_usuario():
             email_usuario = input("Digite o email do cliente: ")
 
             usuario = session.query(Usuario).filter_by(email = email_usuario).first()
@@ -77,7 +77,7 @@ def main():
             
 
                 case 2:
-                    pesquisar_usuario()
+                    consultar_usuario()
 
 
                 case 3:
