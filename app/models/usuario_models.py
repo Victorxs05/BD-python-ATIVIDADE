@@ -16,7 +16,7 @@ class Usuario(Base):
     #Definindo caracteristicas da classe.
     def __init__(self, nome: str, email: str, senha: str):
         self.nome = self._verificar_nome_usuario(nome)
-        self.email = self._verficar_email_usuario(email) 
+        self.email = self._verificar_email_usuario(email) 
         self.senha = self._verificar_email_usuario(senha) 
 
     def _verificar_nome_usuario(self,nome):
@@ -38,7 +38,7 @@ class Usuario(Base):
 
     def _verificar_nome_vazio(self, nome):
         if nome == "":
-            raise ValueError("O que está sendo solicitado está vazio.")
+            raise ValueError("O que está sendo solicitado está inválido.")
 
     def _verificar_nome_invalido(self, nome):
         if not isinstance(nome, str):
@@ -46,7 +46,7 @@ class Usuario(Base):
 
     def _verificar_email_vazio(self, email):
         if email == "":
-            raise ValueError("O que está sendo solicitado está vazio.")
+            raise ValueError("O que está sendo solicitado está inválido.")
 
     def _verificar_email_invalido(self, email):
         if not isinstance(email, str):
@@ -54,7 +54,7 @@ class Usuario(Base):
 
     def _verificar_senha_vazio(self, senha):
         if senha == "":
-            raise ValueError("O que está sendo solicitado está vazio.")
+            raise ValueError("O que está sendo solicitado está inválido.")
 
     def _verificar_senha_invalido(self, senha):
         if not isinstance(senha, str):
